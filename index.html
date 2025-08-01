@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winnie Chelangat Tanui - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .work-item {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e6f0ff 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .work-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .work-title {
+            font-size: 1.4rem;
+            color: #667eea;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .work-company {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .work-period {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .work-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .skill-category h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .achievements {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .achievements h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .achievement-list {
+            list-style: none;
+        }
+
+        .achievement-list li {
+            background: rgba(255, 255, 255, 0.7);
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-list li:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateX(5px);
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+            border: none;
+            padding: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Winnie Chelangat Tanui</h1>
+            <p class="subtitle">Executive Assistant | Front-End Developer | IT Professional</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Nakuru, Rift Valley, Kenya</span>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>winnietanui7@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+254-707-342307</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Professional Experience Section -->
+        <section class="section">
+            <h2>Professional Experience</h2>
+            <div class="work-grid">
+                <div class="work-item">
+                    <div class="work-title">Executive Assistant</div>
+                    <div class="work-company">NTSA Nakuru</div>
+                    <div class="work-period">January 2019 - December 2024</div>
+                    <div class="work-description">
+                        Led executive support operations for Managing Director, coordinating complex travel arrangements, managing high-priority scheduling, and serving as key liaison between senior leadership and external stakeholders. Streamlined executive communications and organized critical business functions.
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-title">Front-End Developer</div>
+                    <div class="work-company">Shop New Level</div>
+                    <div class="work-period">September 2024 - Present</div>
+                    <div class="work-description">
+                        Developing responsive web applications using modern technologies including HTML5, CSS3, and JavaScript. Collaborating with senior development teams to enhance website functionality and conducting thorough testing to ensure high-quality user experiences.
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-title">Virtual Assistant</div>
+                    <div class="work-company">Freelance</div>
+                    <div class="work-period">February 2023 - Present</div>
+                    <div class="work-description">
+                        Providing comprehensive administrative support to diverse clients, managing complex calendars, coordinating international travel, and maintaining confidential client data. Specializing in high-level correspondence editing and customer relations management.
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-title">Personal Assistant to High-Profile Individuals</div>
+                    <div class="work-company">Private Clients</div>
+                    <div class="work-period">January 2018 - December 2023</div>
+                    <div class="work-description">
+                        Delivered exclusive executive-level support to high-net-worth individuals and business leaders. Managed confidential operations, lifestyle coordination, and complex scheduling while maintaining absolute discretion and professionalism.
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-title">Marketing Assistant</div>
+                    <div class="work-company">Bontana Hotel</div>
+                    <div class="work-period">August 2023 - April 2024</div>
+                    <div class="work-description">
+                        Supported comprehensive marketing campaigns through strategic research, content creation, and data analysis. Managed social media platforms to enhance brand visibility and drive customer engagement across multiple channels.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="section">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Frameworks & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Business Applications</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microsoft Office Suite</span>
+                        <span class="skill-tag">Google Workspace</span>
+                        <span class="skill-tag">Trello</span>
+                        <span class="skill-tag">Asana</span>
+                        <span class="skill-tag">Canva</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Core Competencies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Executive Support</span>
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Digital Marketing</span>
+                        <span class="skill-tag">Web Development</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Achievements Section -->
+        <section class="section">
+            <h2>Key Achievements & Projects</h2>
+            <div class="achievements">
+                <h3>Professional Accomplishments</h3>
+                <ul class="achievement-list">
+                    <li><strong>Executive Operations Excellence:</strong> Successfully managed complex travel logistics and scheduling for C-suite executives across 6+ years, maintaining 99% accuracy in arrangements</li>
+                    <li><strong>Digital Transformation:</strong> Transitioned from traditional administrative roles to modern tech-enabled solutions, developing proficiency in web development and digital tools</li>
+                    <li><strong>Client Confidentiality Management:</strong> Maintained impeccable discretion while handling sensitive information for high-profile individuals and business leaders</li>
+                    <li><strong>Multi-Industry Experience:</strong> Successfully adapted administrative and technical skills across government (NTSA), hospitality (Bontana Hotel), and private sector environments</li>
+                    <li><strong>Educational Achievement:</strong> Completed Bachelor of Science in Information Technology while maintaining full-time professional responsibilities</li>
+                    <li><strong>Technical Skill Development:</strong> Self-taught front-end development skills and successfully transitioned into active development role</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+            <h2>Education & Certification</h2>
+            <div class="work-item">
+                <div class="work-title">Bachelor of Science in Information Technology</div>
+                <div class="work-company">Jomo Kenyatta University of Agriculture and Technology</div>
+                <div class="work-period">2024</div>
+                <div class="work-description">
+                    Comprehensive study in information technology, covering software development, database management, system analysis, and emerging technologies. Completed while maintaining full-time professional responsibilities.
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2>Ready to Collaborate?</h2>
+            <p>I bring a unique combination of executive-level administrative expertise and modern technical skills to every project. Let's discuss how I can contribute to your organization's success.</p>
+            <a href="mailto:winnietanui7@gmail.com" class="cta-button">Get In Touch</a>
+            <a href="tel:+254707342307" class="cta-button">Call Now</a>
+        </section>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate sections on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+
+            // Add click tracking for contact buttons
+            document.querySelectorAll('.cta-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Add a subtle animation effect
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+
+            // Add hover effects for work items
+            document.querySelectorAll('.work-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.background = 'linear-gradient(135deg, #f0f4ff 0%, #dae8ff 100%)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.background = 'linear-gradient(135deg, #f8f9ff 0%, #e6f0ff 100%)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
